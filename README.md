@@ -1,4 +1,4 @@
-# 🗂️ Amazon S3 The 7 Core Services You Should Know
+# 🗂️ Amazon S3 and The 7 Services You Should Know.
 
 ## Introduction
 Amazon S3 (Simple Storage Service) is an **object storage** service that provides **virtually unlimited** scalability, **high availability**, and **durability**.  
