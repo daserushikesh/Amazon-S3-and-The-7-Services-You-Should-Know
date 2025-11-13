@@ -13,6 +13,8 @@ Each object in S3 consists of three components:
 2. **Metadata** – Information *about* the data (file type, size, encryption, creation/modification date, permissions, etc.)
 3. **Key** – A unique identifier or path that defines the object’s exact location in the bucket.
 
+![00](https://github.com/user-attachments/assets/35a6550e-25a7-4859-a718-3b38d27cd6d4)
+
 Objects can be images, documents, logs, backups, or datasets and each is accessible globally through its S3 URL.
 
 ---
@@ -24,6 +26,8 @@ It allows you to:
 - Restore older or deleted versions (works like a “recycle bin” for S3).
 - Enable versioning during or after bucket creation.
 
+![1](https://github.com/user-attachments/assets/95f82a1e-74b0-45e4-a61b-15b683aee0b8)
+
 > **Tip:** Once versioning is enabled, deleting an object only adds a delete marker it doesn’t permanently remove the data.
 
 ---
@@ -33,6 +37,8 @@ S3 Object Lock prevents objects from being deleted or overwritten for a specifie
 It has two modes:
 - **Compliance Mode:** No user (not even admin) can delete or overwrite the object until the retention time expires.
 - **Governance Mode:** Only privileged users with special permissions can modify or delete objects before the lock expires.
+
+![2](https://github.com/user-attachments/assets/9ae71aa0-3366-4d20-bd9d-4e18c94a969e)
 
 > Note: Object Lock applies **only to objects uploaded after it’s enabled**.
 
@@ -45,6 +51,8 @@ Steps:
 2. Enable **Static Website Hosting** in properties.
 3. Set the index and (optional) error document.
 4. Make the bucket public or use a CloudFront distribution.
+
+![3](https://github.com/user-attachments/assets/03c508a6-3f1f-40a7-a7b9-5d13bc926eee)
 
 Result: Your site is globally accessible through an S3 URL.
 
@@ -63,6 +71,8 @@ Result: Your site is globally accessible through an S3 URL.
   - **Effect:** Allow or Deny
   - **ARN:** Resource path (bucket or object)
 
+![4](https://github.com/user-attachments/assets/b4e6c710-d24f-4907-951a-3a28e01cf64b)
+
 This provides fine-grained control and better security.
 
 ---
@@ -73,6 +83,8 @@ It has two types:
 - **Same-Region Replication (SRR):** Source and destination in the same region.
 - **Cross-Region Replication (CRR):** Destination bucket in a different AWS region.
 
+![5](https://github.com/user-attachments/assets/972de7d5-009c-40b5-ba1d-911546cb70fc)
+
 Used for disaster recovery and maintaining synchronized data copies.
 
 ---
@@ -81,6 +93,8 @@ Used for disaster recovery and maintaining synchronized data copies.
 Inventory Configuration generates **reports** that summarize the objects in your bucket (daily or weekly).  
 Each report includes metadata such as:
 - Object size, storage class, encryption status, and access frequency.
+
+![6](https://github.com/user-attachments/assets/268fe0a4-ff10-4029-92e3-bedf6111f1b6)
 
 ⚠️ Store the inventory report in a **different bucket** to avoid recursive updates (which can increase costs).
 
@@ -91,6 +105,8 @@ Access Points simplify and secure large-scale data access.
 Each access point is a **unique endpoint** with its own policy, designed for specific users or applications.  
 Example use case:
 - Different access for **paid users**, **free users**, and **admin tools** each with separate rules and visibility.
+
+![7](https://github.com/user-attachments/assets/ccf81c02-b574-4d32-9b2a-d64e3210bacc)
 
 Access points help isolate access permissions while sharing the same underlying bucket.
 
